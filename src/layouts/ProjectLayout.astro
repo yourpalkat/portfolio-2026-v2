@@ -1,0 +1,164 @@
+---
+import Layout from "./Layout.astro";
+import Carousel from "../components/Carousel.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout>
+  <section id="project-page" class="projectPage">
+    <div class="gridWrapper">
+      <div class="imageBlock">
+        <Carousel projectName={frontmatter.slug} />
+      </div>
+
+      <h3 class="projectTitle">{frontmatter.title}</h3>
+
+      <div class="linkBlock">
+        {
+          frontmatter.externalUrl && (
+            <p>
+              <a href={frontmatter.externalUrl}>See it here!</a>
+            </p>
+          )
+        }
+        {
+          frontmatter.gitHubUrl && (
+            <p>
+              <a href={frontmatter.gitHubUrl}>GitHub repo</a>
+            </p>
+          )
+        }
+      </div>
+
+      <div class="contentBlock">
+        <slot />
+      </div>
+
+      <div class="linkBlock">
+        {
+          frontmatter.externalUrl && (
+            <p>
+              <a href={frontmatter.externalUrl}>See it here!</a>
+            </p>
+          )
+        }
+        {
+          frontmatter.gitHubUrl && (
+            <p>
+              <a href={frontmatter.gitHubUrl}>GitHub repo</a>
+            </p>
+          )
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* .projectPage {
+    padding-bottom: 6rem;
+    min-height: calc(100vh - 7rem);
+  }
+
+.imageBlock {
+  grid-column: 2 / 7;
+  grid-row: 3 / 4;
+  padding-top: 2rem;
+}
+.contentBlock,
+.projectTitle,
+.linkBlock {
+  grid-column: 7 / -2;
+}
+
+.contentBlock {
+  padding: 2rem 0;
+  grid-row: 3 / 4;
+}
+.contentBlock > p:first-of-type {
+  margin-top: 0;
+}
+.contentBlock a {
+  color: $highlight;
+  text-decoration-color: $highlight;
+  transition: text-decoration-color 0.3s ease, color 0.3s ease;
+}
+.contentBlock a:hover,
+.contentBlock a:focus {
+  color: black;
+  text-decoration-color: rgba(0, 0, 0, 1);
+}
+
+.projectTitle {
+  font-family: var(--font-heading);
+  font-size: 6.2rem;
+  line-height: 0.9;
+  letter-spacing: -0.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid black;
+  margin: 4rem 0 2rem;
+}
+
+.linkBlock {
+  display: flex;
+}
+.linkBlock p {
+  margin: 0;
+}
+.linkBlock > p:first-of-type {
+  margin-inline-end: 6rem;
+}
+.linkBlock a {
+  color: var(--theme-content-highlight);
+  font-family: var(--font-body-bold);
+  font-weight: 700;
+  text-decoration-color: var(--theme-content-highlight);
+  transition: text-decoration-color 0.3s ease, color 0.3s ease;
+}
+.linkBlock a:hover,
+.linkBlock a:focus {
+  color: black;
+  text-decoration-color: rgba(0, 0, 0, 1);
+}
+
+@media (max-width: 768px) { 
+  .contentBlock,
+  .projectTitle,
+  .linkBlock,
+  .imageBlock {
+    grid-column: 4 / -2;
+  }
+  .projectTitle {
+    grid-row: 1 / 2;
+  }
+  .imageBlock {
+    grid-row: 2 / 3;
+    padding-top: 0;
+  }
+  .contentBlock {
+    padding-top: 0;
+    grid-row: 4 / 5;
+  }
+}
+@media (max-width: 505px) { 
+  .contentBlock,
+  .projectTitle,
+  .linkBlock,
+  .imageBlock {
+    grid-column: 2 / -2;
+  }
+}
+
+@media (max-width: 400px) {
+  .projectTitle {
+    font-family: var(--font-heading);
+    font-size: 5.6rem;
+  }
+}
+@media (max-width: 360px) {
+  .projectTitle {
+    font-family: var(--font-heading);
+    font-size: 4.8rem;
+  }
+} */
+</style>

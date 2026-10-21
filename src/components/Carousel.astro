@@ -1,0 +1,32 @@
+---
+import Image from "astro/components/Image.astro";
+const { projectName } = Astro.props;
+const imagePath = "/src/assets/images/projects/" + projectName + "-1.png";
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/projects/*.{jpeg,jpg,gif,png}",
+);
+// if (!images[imagePath])
+//   throw new Error(
+//     `"${imagePath}" does not exist in glob: "/src/assets/images/projects/*.{jpeg,jpg,png,gif}"`,
+//   );
+---
+
+<!-- TODO: load all project images, display in carousel -->{
+  images[imagePath] && (
+    <div class="imageContainer">
+      <Image src={images[imagePath]()} alt="" />
+    </div>
+  )
+}
+
+<style>
+  .imageContainer {
+    width: 100%;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+</style>

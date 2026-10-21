@@ -1,0 +1,23 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+const allProjects = Object.values(
+  import.meta.glob("../pages/projects/*.md", { eager: true }),
+);
+const featuredProjects = allProjects
+  .sort(
+    (a: any, b: any) => a.frontmatter.featureOrder - b.frontmatter.featureOrder,
+  )
+  .slice(0, 3);
+---
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="sectionContent">
+    <p>
+      Here are a few projects I’ve worked on recently (or not so recently, or
+      that I’m currently working on) that I’m excited to show off! You can also
+      get more information on each by clicking through.
+    </p>
+  </div>
+  {featuredProjects.map((project) => <ProjectCard project={project} />)}
+</section>

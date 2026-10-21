@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProjectSection from "../components/ProjectSection.astro";
 ---
 
 <Layout>
-  <main class="gridWrapper">
+  <main class="wrapper grid pageGrid">
     <h1>Hi. I’m Kat.</h1>
     <section>
       <h2>I make websites.</h2>
@@ -23,44 +24,7 @@ import Layout from "../layouts/Layout.astro";
         </p>
       </div>
     </section>
-    <section>
-      <h2>Projects</h2>
-      <div class="sectionContent">
-        <p>
-          Here are a few projects I’ve worked on recently (or not so recently,
-          or that I’m currently working on) that I’m excited to show off! You
-          can also get more information on each by clicking through.
-        </p>
-      </div>
-      <article>
-        <h3>Video Store Day</h3>
-        <div class="sectionContent">
-          <p>
-            This is a test. Lorem ipsum dolor, sit amet consectetur adipisicing
-            elit. Vitae eligendi sint fugit dolore illo eius non quidem dicta
-            dolorem ducimus. This is a test. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Vitae eligendi sint fugit dolore illo
-            eius non quidem dicta dolorem ducimus. This is a test. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Vitae eligendi sint
-            fugit dolore illo eius non quidem dicta dolorem ducimus.
-          </p>
-        </div>
-      </article>
-      <article>
-        <h3>Inkbox</h3>
-        <div class="sectionContent">
-          <p>
-            This is a test. Lorem ipsum dolor, sit amet consectetur adipisicing
-            elit. Vitae eligendi sint fugit dolore illo eius non quidem dicta
-            dolorem ducimus. This is a test. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Vitae eligendi sint fugit dolore illo
-            eius non quidem dicta dolorem ducimus. This is a test. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Vitae eligendi sint
-            fugit dolore illo eius non quidem dicta dolorem ducimus.
-          </p>
-        </div>
-      </article>
-    </section>
+    <ProjectSection />
     <section>
       <h2>Other Stuff</h2>
       <article>
